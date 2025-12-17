@@ -1,8 +1,14 @@
 [Unit]
-Description=he wil never deliver pizza
+Description=he will never deliver pizza
 After=network.target
 
 [Service]
+User=root
+# Ensure our wrapper is found first
+Environment="PATH=/usr/local/lib/pizza-overrides:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+# Replace 1000 with your UID (check with 'id -u')
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
 WorkingDirectory=/usr/local/bin/
 ExecStart=/usr/local/bin/tiefk-hlpizza
 
