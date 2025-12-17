@@ -1,17 +1,17 @@
-# tiefk-hlpizza
+# tkpizza
 
 A tool that monitors keyboard input and locks the system when the word 'pizza' is detected.
 
 ## Installation
 
-1. Download the latest `tiefk-hlpizza` binary from the [releases page](https://github.com/NoahJeanA/tiefk-hlpizza/releases/latest).
+1. Download the latest `tkpizza` binary from the [releases page](https://github.com/NoahJeanA/tkpizza/releases/latest).
 2. Make the binary executable:
     ```bash
-    chmod +x tiefk-hlpizza
+    chmod +x tkpizza
     ```
 3. Move the binary to `/usr/local/bin/`:
     ```bash
-    sudo mv tiefk-hlpizza /usr/local/bin/
+    sudo mv tkpizza /usr/local/bin/
     ```
 
 ## Systemd Service Setup
@@ -48,7 +48,7 @@ EOF'
     Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
     
     WorkingDirectory=/usr/local/bin/
-    ExecStart=/usr/local/bin/tiefk-hlpizza
+    ExecStart=/usr/local/bin/tkpizza
     
     Restart=always
     RestartSec=5
