@@ -1,0 +1,13 @@
+[Unit]
+Description=he wil never deliver pizza
+After=network.target
+
+[Service]
+WorkingDirectory=/usr/local/bin/
+ExecStart=/usr/local/bin/tiefk-hlpizza
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
