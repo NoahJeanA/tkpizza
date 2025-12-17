@@ -21,8 +21,7 @@ jobs:
           go-version: '1.25.3'
 
       - name: Build
-        run: go build -v -o tiefk-hlpizza
-
+        run: go build -v -o tkpizza
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -42,6 +41,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./tiefk-hlpizza
-          asset_name: tiefk-hlpizza
+          asset_path: ./tkpizza
+          asset_name: tkpizza
           asset_content_type: application/octet-stream
